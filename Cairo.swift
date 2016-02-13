@@ -33,8 +33,8 @@ public class Context {
 	public func clear() { cairo_paint(ctx) }
 
 	public func beginPath() { cairo_new_path(ctx) }
-	public func moveToX(x: Double, Y y: Double) { cairo_move_to(ctx, x, y) }
-	public func lineToX(x: Double, Y y: Double) { cairo_line_to(ctx, x, y) }
+	public func moveTo(x x: Double, y: Double) { cairo_move_to(ctx, x, y) }
+	public func lineTo(x x: Double, y: Double) { cairo_line_to(ctx, x, y) }
 	public func fill() { cairo_fill(ctx) }
 	public func fillPreserve() { cairo_fill_preserve(ctx) }
 	public func stroke() { cairo_stroke(ctx) }
@@ -59,12 +59,12 @@ public class Context {
 	//
 	//
 
-	public func setSourceRed(red: Double, green: Double, blue: Double) {
+	public func setSourceColor(red red: Double, green: Double, blue: Double) {
 		currentPattern = Pattern(red: red, green: green, blue: blue)
 		cairo_set_source(ctx, currentPattern!._cairoPattern())
 	}
 
-	public func setSourceRed(red: Double, green: Double, blue: Double, alpha: Double) {
+	public func setSourceColor(red red: Double, green: Double, blue: Double, alpha: Double) {
 		currentPattern = Pattern(red: red, green: green, blue: blue, alpha: alpha)
 		cairo_set_source(ctx, currentPattern!._cairoPattern())
 	}
