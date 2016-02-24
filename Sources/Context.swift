@@ -26,10 +26,12 @@ public class Context {
 	//
 	// Transformations
 
-	public func translate(dx: Double, dy: Double) { cairo_translate(ctx, dx, dy) }
-	public func scale(sx: Double, sy: Double) { cairo_translate(ctx, sx, sy) }
+	public func translate(dx dx: Double, dy: Double) { cairo_translate(ctx, dx, dy) }
+	public func scale(factor: Double) { cairo_translate(ctx, factor, factor); }
+	public func scale(sx sx: Double, sy: Double) { cairo_translate(ctx, sx, sy) }
 	public func rotate(angle: Double) { cairo_rotate(ctx, angle) }
 	public func transform(inout matrix: Matrix) { cairo_transform(ctx, &matrix) }
+	public func getMatrix(inout matrix: Matrix) { cairo_get_matrix(ctx, &matrix) }
 	public func setMatrix(inout matrix: Matrix) { cairo_set_matrix(ctx, &matrix) }
 	public func copyMatrixTo(inout matrix: Matrix) { cairo_get_matrix(ctx, &matrix) }
 	public func setIdentity() { cairo_identity_matrix(ctx) }
