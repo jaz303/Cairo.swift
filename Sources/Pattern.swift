@@ -9,6 +9,10 @@ public class Pattern {
 		pattern = cairo_pattern_create_rgba(red, green, blue, alpha)
 	}
 
+	public init(surface: ImageSurface) {
+		pattern = cairo_pattern_create_for_surface(surface._cairoSurface())
+	}
+
 	deinit {
 		cairo_pattern_destroy(pattern)
 	}

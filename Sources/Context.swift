@@ -13,6 +13,7 @@ public class Context {
 	public func restore() { cairo_restore(ctx) }
 
 	public func clear() { cairo_paint(ctx) }
+	public func paint() { cairo_paint(ctx) }
 
 	public func beginPath() { cairo_new_path(ctx) }
 	public func moveTo(x x: Double, y: Double) { cairo_move_to(ctx, x, y) }
@@ -42,6 +43,11 @@ public class Context {
 
 	//
 	//
+
+	public func setSource(pattern: Pattern) {
+		currentPattern = pattern
+		cairo_set_source(ctx, currentPattern!._cairoPattern())
+	}
 
 	public func setSourceColor(red red: Double, green: Double, blue: Double) {
 		currentPattern = Pattern(red: red, green: green, blue: blue)
