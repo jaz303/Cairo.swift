@@ -1,12 +1,12 @@
 import CCairo
 
 public class Pattern {
-	public init(red: Double, green: Double, blue: Double) {
-		pattern = cairo_pattern_create_rgb(red, green, blue)
+	public init(r: Double, g: Double, b: Double) {
+		pattern = cairo_pattern_create_rgb(r, g, b)
 	}
 
-	public init(red: Double, green: Double, blue: Double, alpha: Double) {
-		pattern = cairo_pattern_create_rgba(red, green, blue, alpha)
+	public init(r: Double, g: Double, b: Double, a: Double) {
+		pattern = cairo_pattern_create_rgba(r, g, b, a)
 	}
 
 	public init(surface: ImageSurface) {

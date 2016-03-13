@@ -49,13 +49,13 @@ public class Context {
 		cairo_set_source(ctx, currentPattern!._cairoPattern())
 	}
 
-	public func setSourceColor(red red: Double, green: Double, blue: Double) {
-		currentPattern = Pattern(red: red, green: green, blue: blue)
+	public func setSource(r r: Double, g: Double, b: Double) {
+		currentPattern = Pattern(r: r, g: g, b: b)
 		cairo_set_source(ctx, currentPattern!._cairoPattern())
 	}
 
-	public func setSourceColor(red red: Double, green: Double, blue: Double, alpha: Double) {
-		currentPattern = Pattern(red: red, green: green, blue: blue, alpha: alpha)
+	public func setSource(r r: Double, g: Double, b: Double, a: Double) {
+		currentPattern = Pattern(r: r, g: g, b: b, a: a)
 		cairo_set_source(ctx, currentPattern!._cairoPattern())
 	}
 
